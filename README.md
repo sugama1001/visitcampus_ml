@@ -14,10 +14,9 @@ link_model: https://drive.google.com/file/d/1-OXvFKlgCUrU28IkBzzt1DAvMdVCY1T0/vi
 **Judging–Perceiving Classification**  
 link_model: https://drive.google.com/file/d/1--fBI59iDhoW67XlevG8kH-vA-mb3lus/view?usp=sharing
 
-
 **Scope of Science Reccomendation model**  
 We concatenate these four models so that they become 1 model to recommend the scope of science  
-link_model: https://drive.google.com/file/d/1HE92DW5GWxMQvz-9Gh0pBhpblzVF4EzU/view?usp=sharing
+link_model: https://drive.google.com/drive/folders/1MxlcdGMnRdordX0Xl1GIr3PuBJvgAvjc
 
 # chatbot model
 on progress
