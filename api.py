@@ -4,7 +4,27 @@ import numpy as np
 import tensorflow_text as text
 import tensorflow_hub
 
-app = Flask(__name__)
+def gabung_probabilitas(arrays):
+    soshum = sum(arrays[0])
+    saintek = sum(arrays[1])
+    soshum_percentage = round(soshum/(soshum+saintek),2)
+
+    return [soshum_percentage,1-soshum_percentage]
+
+def pembobotan_elemen_MBTI(model_output_value, bobot):
+    for index_list, list_data in enumerate(model_output_value):
+        for index_data, data in enumerate(list_data):
+            for num in range(2):
+                bobot[index_list][index_data][num] = round(model_output_value[index_list][index_data]*bobot[index_list][index_data][num], 2)
+
+    output_list = [[], []]
+
+    for bobot_list in bobot:
+        for data in bobot_list:
+                output_list[0].append(data[0])
+                output_list[1].append(data[1])
+           
+    return output_list
 
 # Load the model outside of the route
 model_path = "Scope Of Science Recommendation Model"
@@ -15,6 +35,8 @@ try:
     print("Model loaded successfully.")
 except Exception as e:
     print("Error loading the model:", str(e))
+
+app = Flask(__name__)
 
 @app.route("/")
 def home():
@@ -43,8 +65,11 @@ def predict():
         # Make predictions using the loaded model
         predictions = model.predict(arrays)
 
+        bobot = [[[0.875,0.125],[0.75,0.25]], [[0.67,0.33],[0.5,0.5]], [[0.75,0.25],[0.71,0.29]], [[0.625,0.375],[0.79,0.21]]]
         json_predictions = [float(prediction[0]) for prediction in predictions]
-
+        json_predictions = pembobotan_elemen_MBTI(json_predictions,bobot)
+        json_predictions = gabung_probabilitas(json_predictions)
+  
         return jsonify(json_predictions)
 
     except Exception as e:
