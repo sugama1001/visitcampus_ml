@@ -7,9 +7,9 @@ import tensorflow_hub
 def gabung_probabilitas(arrays):
     soshum = sum(arrays[0])
     saintek = sum(arrays[1])
-    soshum_percentage = round(soshum/(soshum+saintek),2)
+    soshum_percentage = round(soshum / (soshum + saintek), 2)
 
-    return [soshum_percentage,1-soshum_percentage]
+    return [soshum_percentage, 1 - soshum_percentage]
 
 def pembobotan_elemen_MBTI(model_output_value, bobot):
     for index_list, list_data in enumerate(model_output_value):
@@ -20,10 +20,9 @@ def pembobotan_elemen_MBTI(model_output_value, bobot):
     output_list = [[], []]
 
     for bobot_list in bobot:
-        for data in bobot_list:
-                output_list[0].append(data[0])
-                output_list[1].append(data[1])
-           
+        output_list[0].append(bobot_list[0])
+        output_list[1].append(bobot_list[1])
+
     return output_list
 
 # Load the model outside of the route
@@ -65,8 +64,17 @@ def predict():
         # Make predictions using the loaded model
         predictions = model.predict(arrays)
 
-        bobot = [[[0.875,0.125],[0.75,0.25]], [[0.67,0.33],[0.5,0.5]], [[0.75,0.25],[0.71,0.29]], [[0.625,0.375],[0.79,0.21]]]
+            
+
+        bobot = [
+            [[0.875,0.125],[0.75,0.25]],
+            [[0.67,0.33],[0.5,0.5]],
+            [[0.75,0.25],[0.71,0.29]],
+            [[0.625,0.375],[0.79,0.21]]
+        ]
+        # json_predictions = [float(prediction[0]) for prediction in predictions]
         json_predictions = [float(prediction[0]) for prediction in predictions]
+        json_predictions = [[json_predictions[0],1-json_predictions[0]],[json_predictions[1],1-json_predictions[1]],[json_predictions[2],1-json_predictions[2]],[json_predictions[3],1-json_predictions[3]]]
         json_predictions = pembobotan_elemen_MBTI(json_predictions,bobot)
         json_predictions = gabung_probabilitas(json_predictions)
   
