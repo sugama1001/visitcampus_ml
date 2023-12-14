@@ -21,11 +21,12 @@ def home():
     return "<h1>The API WORK</h1>"
 @app.route('/predict', methods=['POST'])
 def predict():
+    # Contoh Input:
     # {
     #     "EI_text": "saya suka menyendiri",
     #     "SN_text": "saya selalu mengikuti kata hati",
     #     "TF_text": "saya suka analisis",
-    #     "JP_text": "nah kamu babi"
+    #     "JP_text": "saya tidak suka diatur orang lain"
     # }
     try:
         # Example data for POST request
