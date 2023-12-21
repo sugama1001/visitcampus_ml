@@ -1,0 +1,10 @@
+flask
+tensorflow==2.13.0
+tensorflow-text==2.13.0
+gunicorn
+pillow
+joblib
+transformers
+deep_translator
+numpy
+tensorflow_hub
