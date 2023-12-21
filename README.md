@@ -20,7 +20,7 @@ link_model:
 We concatenate these four models so that they become 1 model to recommend the scope of science  
 link_model: https://drive.google.com/drive/folders/1MxlcdGMnRdordX0Xl1GIr3PuBJvgAvjc
 
-# chatbot model
+# ChatBot model
 
 **Question and Greetings Classification**
 model link :https://drive.google.com/drive/folders/1vZ1REHKfOYdsyneOd8nt25ndcKcvk84l?usp=sharing
