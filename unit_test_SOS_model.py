@@ -19,7 +19,7 @@ class FlaskAppTest(unittest.TestCase):
             "EI_text": "saya suka menyendiri",
             "SN_text": "saya selalu mengikuti kata hati",
             "TF_text": "saya suka analisis",
-            "JP_text": "nah kamu babi"
+            "JP_text": "bertindak sesuka hati adalah jalan ninjaku"
         }
         response = self.app.post('/predict', json=input_data)
 
