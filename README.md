@@ -22,13 +22,13 @@ link_model: https://drive.google.com/drive/folders/1MxlcdGMnRdordX0Xl1GIr3PuBJvg
 
 # ChatBot model
 
-**Question and Greetings Classification**
-model link :https://drive.google.com/drive/folders/1vZ1REHKfOYdsyneOd8nt25ndcKcvk84l?usp=sharing
+**Question and Greetings Classification**  
+model link :https://drive.google.com/drive/folders/1vZ1REHKfOYdsyneOd8nt25ndcKcvk84l?usp=sharing  
 encoder link :https://drive.google.com/file/d/1-dE472t0KYOIBgcKddb6mSefVMfFwEqM/view?usp=sharing
 
-**University Classification**
-model link : https://drive.google.com/drive/folders/1-68mWCklXE6MviNQOnjwTqb3f2r5567O?usp=sharing
+**University Classification**  
+model link : https://drive.google.com/drive/folders/1-68mWCklXE6MviNQOnjwTqb3f2r5567O?usp=sharing  
 encoder link : https://drive.google.com/file/d/1KMttVOSPJJEksLPw4EiWqaN47cmS2hv_/view?usp=sharing
 
-**Chatbot Model**
-model link :
+**Chatbot Model**  
+model link : https://drive.google.com/drive/folders/1OSonBIvR-XX6OcQJT9QaJorQK16LKQkX?usp=drive_link
